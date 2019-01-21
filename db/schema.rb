@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_091009) do
+ActiveRecord::Schema.define(version: 2019_01_21_214241) do
 
   create_table "owners", force: :cascade do |t|
     t.string "name"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_091009) do
     t.string "part_number"
     t.string "part_name"
     t.integer "cost"
-    t.string "part_type"
+    t.string "part_designation"
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,10 +58,11 @@ ActiveRecord::Schema.define(version: 2019_01_21_091009) do
     t.integer "year"
     t.string "vin"
     t.string "engine"
-    t.string "car_type"
+    t.string "car_classification"
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "owner_id"
   end
 
   create_table "vendors", force: :cascade do |t|

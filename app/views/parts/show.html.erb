@@ -11,7 +11,7 @@
     <tr>
         <td><%= link_to @part.part_number, part_path(@part) %></td>
         <td><%= @part.part_name %></td>
-        <td><%= @part.part_type %></td>
+        <td><%= @part.part_designation %></td>
         <td><%= @part.quantity %></td>
         <td><%= @part.cost %></td>
     </tr>
@@ -24,7 +24,7 @@
   t.string "part_number"
   t.string "part_name"
   t.integer "cost"
-  t.string "part_type"
+  t.string "part_designation"
   t.integer "quantity"
   t.datetime "created_at", null: false
   t.datetime "updated_at", null: false

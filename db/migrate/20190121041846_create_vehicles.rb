@@ -6,7 +6,7 @@ class CreateVehicles < ActiveRecord::Migration[5.2]
       t.integer :year
       t.string :vin
       t.string :engine
-      t.string :car_type
+      t.string :car_classification
       t.string :color
 
       t.timestamps

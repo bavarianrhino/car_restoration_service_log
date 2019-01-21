@@ -4,7 +4,7 @@ class CreateParts < ActiveRecord::Migration[5.2]
       t.string :part_number
       t.string :part_name
       t.integer :cost
-      t.string :part_type
+      t.string :part_designation
       t.integer :quantity
 
       t.timestamps

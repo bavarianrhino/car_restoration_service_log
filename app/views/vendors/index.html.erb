@@ -1,6 +1,9 @@
 <h1>Vendors Index Page</h1>
 
-
+<% @vendors.each do |vendor| %>
+    <li><%= link_to vendor.name, vendor_path(vendor) %></li>
+    <br />
+<% end %>
 
 <!-- create_table "vendors", force: :cascade do |t|
   t.string "name"

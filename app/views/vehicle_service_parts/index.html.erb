@@ -1,7 +1,9 @@
 <h1> VehicleServiceParts Index Page </h1>
 
 
-
+<% @vehicleserviceparts.each do |vsp| %>
+    <li><%= link_to vsp.vehicle_id, vehicleservicepart_path(vsp) %></li>
+<% end %>
 
 <!-- create_table "vehicle_service_parts", force: :cascade do |t|
   t.integer "vehicle_id"

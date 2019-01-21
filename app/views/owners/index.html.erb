@@ -1,6 +1,11 @@
 <h1> Owners Index Page </h1>
 
-
+<% @owners.each do |owner| %>
+    <li><%= link_to owner.name, owner_path(owner) %></li>
+    <li><%= owner.phone_number%></li>
+    <li><%= owner.email%></li>
+    <br />
+<% end %>
 
 
 <!-- create_table "owners", force: :cascade do |t|

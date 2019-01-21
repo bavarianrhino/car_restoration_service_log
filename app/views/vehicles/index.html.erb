@@ -1,6 +1,9 @@
 <h1>Vehicles Index Page</h1>
 
-
+<% @vehicles.each do |vehicle| %>
+    <li><%= link_to vehicle.model, vehicle_path(vehicle) %></li>
+    <br />
+<% end %>
 
 
 

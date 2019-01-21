@@ -1,6 +1,10 @@
 <h1> Services Index Page </h1>
 
-
+<% @services.each do |service| %>
+    <li><%= link_to service.date, service_path(service) %></li>
+    <li><%= service.work_description%></li>
+    <br />
+<% end %>
 
 <!-- create_table "services", force: :cascade do |t|
   t.string "date"

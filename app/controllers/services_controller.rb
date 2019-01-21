@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
 
     private
     def service_params
-        params.require(:service).permit() #FILL .PERMIT PARAMS
+        params.require(:service).permit(:date, :work_description, :car_miles, :work_hours) #FILL .PERMIT PARAMS
     end
 
 end

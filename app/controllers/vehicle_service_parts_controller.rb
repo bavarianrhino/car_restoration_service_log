@@ -41,6 +41,6 @@ class VehicleServicePartsController < ApplicationController
 
     private
     def vsp_params
-        params.require(:vehicleservicepart).permit() #FILL .PERMIT PARAMS
+        params.require(:vehicleservicepart).permit(:vehicle, :service, :part_id) #FILL .PERMIT PARAMS
     end
 end

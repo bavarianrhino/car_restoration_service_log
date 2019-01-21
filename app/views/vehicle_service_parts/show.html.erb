@@ -1,0 +1,17 @@
+<h1> VehicleServiceParts Show Page </h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Super Name</th>
+        <th colspan="2"> Super Power</th>
+    </tr>
+    <tr>
+        <td><%= @heroine.name %></td>
+        <td><%= @heroine.super_name %></td>
+        <td><%= link_to @power.name, power_path(@power) %></td>
+    </tr>
+</table>
+<br />
+
+<%= link_to 'Show All Heroines', heroines_path(@heroines) %>

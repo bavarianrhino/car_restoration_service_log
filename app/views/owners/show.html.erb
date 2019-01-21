@@ -1,0 +1,40 @@
+<h1> Owners Show Page </h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <!-- <th>Cars</th> ???????????????????????-->
+        <!-- <th colspan="2"> Super Power</th> -->
+    </tr>
+    <tr>
+        <td><%= link_to @owner.name, owner_path(@owner) %></td>
+        <td><%= @owner.street %></td>
+        <td><%= @owner.city %></td>
+        <td><%= @owner.state %></td>
+        <td><%= @owner.zip %></td>
+        <td><%= @owner.phone_number %></td>
+        <td><%= @owner.email %></td>
+        <!-- <td>< @owner.cars?????????????????? %></td> -->
+    </tr>
+</table>
+<br />
+
+<%= link_to 'Show All Owners', owners_path(@owners) %>
+
+<!-- create_table "owners", force: :cascade do |t|
+  t.string "name"
+  t.string "street"
+  t.string "city"
+  t.string "state"
+  t.integer "zip"
+  t.string "phone_number"
+  t.string "email"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end -->

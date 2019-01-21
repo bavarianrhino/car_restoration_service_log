@@ -1,1 +1,29 @@
 <h1>Vendors Show Page</h1>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Website</th>
+        <th>Location</th>
+    </tr>
+    <tr>
+        <td><%= @vendor.name %></td>
+        <td><%= @vendor.contact %></td>
+        <td><%= @vendor.website %></td>
+        <td><%= @vendor.location %></td>
+    </tr>
+</table>
+<br />
+
+<%= link_to 'Show All Vendors', vendors_path(@vendors) %>
+
+<!-- create_table "vendors", force: :cascade do |t|
+  t.string "name"
+  t.string "contact"
+  t.string "website"
+  t.string "location"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end -->

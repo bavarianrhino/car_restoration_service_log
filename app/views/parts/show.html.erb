@@ -2,16 +2,30 @@
 
 <table>
     <tr>
-        <th>Name</th>
-        <th>Super Name</th>
-        <th colspan="2"> Super Power</th>
+        <th>Part Number</th>
+        <th>Part Name</th>
+        <th>Part Type</th>
+        <th>Quantity</th>
+        <th>Cost</th>
     </tr>
     <tr>
-        <td><%= @heroine.name %></td>
-        <td><%= @heroine.super_name %></td>
-        <td><%= link_to @power.name, power_path(@power) %></td>
+        <td><%= link_to @part.part_number, part_path(@part) %></td>
+        <td><%= @part.part_name %></td>
+        <td><%= @part.part_type %></td>
+        <td><%= @part.quantity %></td>
+        <td><%= @part.cost %></td>
     </tr>
 </table>
 <br />
 
-<%= link_to 'Show All Heroines', heroines_path(@heroines) %>
+<%= link_to 'Show All Parts', parts_path(@parts) %>
+
+<!-- create_table "parts", force: :cascade do |t|
+  t.string "part_number"
+  t.string "part_name"
+  t.integer "cost"
+  t.string "part_type"
+  t.integer "quantity"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end -->

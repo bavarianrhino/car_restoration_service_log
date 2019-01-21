@@ -1,1 +1,39 @@
 <h1>Vehicles Show Page</h1>
+
+
+<table>
+    <tr>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Vin Number</th>
+        <th>Engine</th>
+        <th>Car Type</th>
+        <th>Color</th>
+    </tr>
+    <tr>
+        <td><%= @vehicle.make %></td>
+        <td><%= @vehicle.model %></td>
+        <td><%= @vehicle.year %></td>
+        <td><%= @vehicle.vin %></td>
+        <td><%= @vehicle.engine %></td>
+        <td><%= @vehicle.car_type %></td>
+        <td><%= @vehicle.color %></td>
+    </tr>
+</table>
+<br />
+
+<%= link_to 'Show All Vehicles', vehicles_path(@vehicles) %>
+
+
+<!-- create_table "vehicles", force: :cascade do |t|
+  t.string "make"
+  t.string "model"
+  t.integer "year"
+  t.string "vin"
+  t.string "engine"
+  t.string "car_type"
+  t.string "color"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end -->

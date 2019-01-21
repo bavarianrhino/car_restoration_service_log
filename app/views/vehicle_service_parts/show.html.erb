@@ -2,16 +2,26 @@
 
 <table>
     <tr>
-        <th>Name</th>
-        <th>Super Name</th>
-        <th colspan="2"> Super Power</th>
+        <th>Vehicle Id/Name</th>
+        <th>Service ID/Name</th>
+        <th>Part ID/Name</th>
     </tr>
     <tr>
-        <td><%= @heroine.name %></td>
-        <td><%= @heroine.super_name %></td>
-        <td><%= link_to @power.name, power_path(@power) %></td>
+        <td><%= @vehicle_service_part.vehicle_id %></td>
+        <td><%= @vehicle_service_part.service_id %></td>
+        <td><%= @vehicle_service_part.part_id %></td>
     </tr>
 </table>
 <br />
 
-<%= link_to 'Show All Heroines', heroines_path(@heroines) %>
+<%= link_to 'Show All VSPs', vehicle_service_parts_path(@vehicle_service_parts) %>
+
+
+
+<!-- create_table "vehicle_service_parts", force: :cascade do |t|
+  t.integer "vehicle_id"
+  t.integer "service_id"
+  t.integer "part_id"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end -->

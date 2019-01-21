@@ -1,0 +1,2 @@
+module VehicleServicePartsHelper
+end

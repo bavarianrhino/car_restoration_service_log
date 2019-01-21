@@ -1,0 +1,2 @@
+class VehicleServicePart < ApplicationRecord
+end

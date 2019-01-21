@@ -27,6 +27,7 @@ sunny = Owner.create({name: "Sunny Sharam", street: "9421 Peachtree Dr.", city: 
 
 
 
+#########NOT SEEDING#############
 bmw = Vehicle.create({make: "BMW", model: "540i", year: 1995, vin: "1VWAP7A31EC017152", engine: "M60B40", car_type: "4door", color: "black"})
 vw = Vehicle.create({make: "Volkswagen", model: "Transporter", year: 1974, vin: "1D7RV1GT2BS542129", engine: "Type 4 1700cc", car_type: "Bus", color: "white & green"})
 audi = Vehicle.create({make: "Saab", model: "A4", year: 2001, vin: "19UUA66215A062598", engine: "2.8L V6", car_type: "Wagen", color: "white"})
@@ -60,6 +61,21 @@ volvo_service2 = Service.create({date: "04/12/2019", work_description: "Changed 
 
 
 
+ven1 = Vendor.create({name: "FCPeuro", contact: "Josh 223-234-1234", website: "www.fcpeuro.com", location: "Connecticut"})
+ven2 = Vendor.create({name: "EMPI", contact: "Jessi 234-123-6542", website: "www.empi.com", location: "California"})
+ven3 = Vendor.create({name: "Wolfburgs West", contact: "Bruce 560-832-5443", website: "www.wolfsburgwest.com", location: "California"})
+ven4 = Vendor.create({name: "Audi Parts For Days", contact: "Gene 234-123-7645", website: "www.audiforever.com", location: "Idaho"})
+ven5 = Vendor.create({name: "German Select", contact: "wolfgang 235-643-7321", website: "www.gselect.com", location: "Germany"})
+# create_table "vendors", force: :cascade do |t|
+#   t.string "name"
+#   t.string "contact"
+#   t.string "website"
+#   t.string "location"
+# end
+
+
+
+#########NOT SEEDING#############
 bmw_part1 = Part.create({part_number: "45-8970-445", part_name: "MANN Oil Filter", cost: 12, part_type: "Engine", quantity: 1, vendor_id: 1})
 bmw_part2 = Part.create({part_number: "45-273-492", part_name: "Brembo Brake Pads", cost: 80, part_type: "Brakes", quantity: 4, vendor_id: 1})
 vw_part1 = Part.create({part_number: "221-408-119A", part_name: "Brembo Drum Brake Cylinder", cost: 27, part_type: "Brakes", quantity: 2, vendor_id: 2})
@@ -79,28 +95,17 @@ volvo_part2 = Part.create({part_number: "vv70-700-3386", part_name: "Transmissio
 
 
 
-ven1 = Vendor.create({name: "FCPeuro", contact: "Josh 223-234-1234", website: "www.fcpeuro.com", location: "Connecticut"})
-ven2 = Vendor.create({name: "EMPI", contact: "Jessi 234-123-6542", website: "www.empi.com", location: "California"})
-ven3 = Vendor.create({name: "Wolfburgs West", contact: "Bruce 560-832-5443", website: "www.wolfsburgwest.com", location: "California"})
-ven4 = Vendor.create({name: "Audi Parts For Days", contact: "Gene 234-123-7645", website: "www.audiforever.com", location: "Idaho"})
-ven5 = Vendor.create({name: "German Select", contact: "wolfgang 235-643-7321", website: "www.gselect.com", location: "Germany"})
-# create_table "vendors", force: :cascade do |t|
-#   t.string "name"
-#   t.string "contact"
-#   t.string "website"
-#   t.string "location"
-# end
 
 
-
-bmw_vsp1 = VehicleServicePart.create({vehicle: bmw, service: bmw_service1, part_id: bmw_part1})
-bmw_vsp2 = VehicleServicePart.create({vehicle: bmw, service: bmw_service2, part_id: bmw_part2})
-vw_vsp1 = VehicleServicePart.create({vehicle: vw, service: vw_service1, part_id: vw_part1})
-vw_vsp2 = VehicleServicePart.create({vehicle: vw, service: vw_service2, part_id: vw_part2})
-audi_vsp1 = VehicleServicePart.create({vehicle: audi, service: audi_service1, part_id: audi_part1})
-audi_vsp2 = VehicleServicePart.create({vehicle: audi, service: audi_service2, part_id: audi_part2})
-volvo_vsp1 = VehicleServicePart.create({vehicle: volvo, service: volvo_service1, part_id: volvo_part1})
-volvo_vsp2 = VehicleServicePart.create({vehicle: volvo, service: volvo_service2, part_id: volvo_part2})
+#########NOT SEEDING#############
+bmw_vsp1 = VehicleServicePart.create({vehicle_id: bmw, service_id: bmw_service1, part_id: bmw_part1})
+bmw_vsp2 = VehicleServicePart.create({vehicle_id: bmw, service_id: bmw_service2, part_id: bmw_part2})
+vw_vsp1 = VehicleServicePart.create({vehicle_id: vw, service_id: vw_service1, part_id: vw_part1})
+vw_vsp2 = VehicleServicePart.create({vehicle_id: vw, service_id: vw_service2, part_id: vw_part2})
+audi_vsp1 = VehicleServicePart.create({vehicle_id: audi, service_id: audi_service1, part_id: audi_part1})
+audi_vsp2 = VehicleServicePart.create({vehicle_id: audi, service_id: audi_service2, part_id: audi_part2})
+volvo_vsp1 = VehicleServicePart.create({vehicle_id: volvo, service_id: volvo_service1, part_id: volvo_part1})
+volvo_vsp2 = VehicleServicePart.create({vehicle_id: volvo, service_id: volvo_service2, part_id: volvo_part2})
 # create_table "vehicle_service_parts", force: :cascade do |t|
 #   t.integer "vehicle_id"
 #   t.integer "service_id"

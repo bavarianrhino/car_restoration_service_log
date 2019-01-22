@@ -1,9 +1,20 @@
 <h1> Owners New Page </h1>
 
+<h1>Signup!</h1>
 
-<%= link_to 'Back', owners_path(@owners) %>
-
-
+<%= form_for :owner, url: '/owners' do |f| %>
+    <p> Name: <%= @f.text_field :name %></p>
+    <p> Street: <%= @f.text_field :street %></p>
+    <p> City: <%= @f.text_field :city %></p>
+    <p> State: <%= @f.text_field :state %></p>
+    <p> Zip: <%= @f.text_field :zip %></p>
+    <p> Phone Number: <%= @f.text_field :phone_number %></p>
+    <p> Email: <%= @f.text_field :email %></p>
+    <p> Username: <%= f.text_field :username %></p>
+    <p> Password: <%= f.password_field :password %></p>
+    <p> Password Confirmation: <%= f.password_field :password_confirmation %></p>
+    <%= f.submit "Submit" %>
+<% end %>
 
 <!-- create_table "owners", force: :cascade do |t|
   t.string "name"

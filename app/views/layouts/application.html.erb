@@ -9,14 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <% if session[:person_id] %>
+  <% if session[:owner_id] %>
     <%= link_to("Logout", logout_path, method: :delete) %>
   <% else %>
     <%= link_to("Login", login_path) %>
   <% end %>
 
   <!-- flash notice -->
-  
+
   <%= link_to("Vehicles", vehicles_path) %>
   <%= link_to("Parts", parts_path) %>
   <%= link_to("Vendors", vendors_path) %>

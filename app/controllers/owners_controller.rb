@@ -18,6 +18,7 @@ class OwnersController < ApplicationController
 
     def create
         @owner = Owner.create(owner_params)
+        # verify password with confirmation password
         if @owner.save
             redirect_to @owner
         else
@@ -42,7 +43,7 @@ class OwnersController < ApplicationController
 
     private
     def owner_params
-        params.require(:owner).permit(:name, :street, :city, :state, :zip, :phone_number, :email, :username, :password_digest) #FILL .PERMIT PARAMS
+        params.require(:owner).permit(:name, :street, :city, :state, :zip, :phone_number, :email, :username, :password_digest)
     end
 
 end

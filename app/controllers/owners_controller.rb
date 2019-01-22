@@ -1,5 +1,6 @@
 class OwnersController < ApplicationController
 
+  # call authorize! wherever
     def index
         @owners = Owner.all
     end
@@ -41,7 +42,7 @@ class OwnersController < ApplicationController
 
     private
     def owner_params
-        params.require(:owner).permit(:name, :street, :city, :state, :zip, :phone_number, :email) #FILL .PERMIT PARAMS
+        params.require(:owner).permit(:name, :street, :city, :state, :zip, :phone_number, :email, :username, :password_digest) #FILL .PERMIT PARAMS
     end
 
 end

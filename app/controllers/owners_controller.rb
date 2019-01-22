@@ -1,5 +1,6 @@
 class OwnersController < ApplicationController
 
+  # call authorize! wherever
     def index
         @owners = Owner.all
     end

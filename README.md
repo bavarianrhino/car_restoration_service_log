@@ -44,4 +44,5 @@ Things you may want to cover:
     * Pull
     1. git checkout --track origin/ryan
         - git checkout --track origin/sunny
-    2. git pull --all
+    2. git fetch --all    
+    3. git pull --all

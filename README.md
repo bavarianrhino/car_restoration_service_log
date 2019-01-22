@@ -35,3 +35,13 @@ Things you may want to cover:
 9. List of parts that were serviced on an owners car.
 10. Show the service timeline (from start service date to most recent service date) include miles.
 ....more to come.
+
+
+- git commands
+    * Push
+    1. git push --all origin
+
+    * Pull
+    1. git checkout --track origin/ryan
+        - git checkout --track origin/sunny
+    2. git pull --all

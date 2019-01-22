@@ -27,7 +27,6 @@ sunny = Owner.create({name: "Sunny Sharam", street: "9421 Peachtree Dr.", city: 
 
 
 
-#########NOT SEEDING#############
 bmw = Vehicle.create({make: "BMW", model: "540i", year: 1995, vin: "1VWAP7A31EC017152", engine: "M60B40", car_classification: "4door", color: "black", owner_id: 1})
 vw = Vehicle.create({make: "Volkswagen", model: "Transporter", year: 1974, vin: "1D7RV1GT2BS542129", engine: "Type 4 1700cc", car_classification: "Bus", color: "white & green", owner_id: 1})
 audi = Vehicle.create({make: "Saab", model: "A4", year: 2001, vin: "19UUA66215A062598", engine: "2.8L V6", car_classification: "Wagen", color: "white", owner_id: 2})
@@ -76,7 +75,6 @@ ven5 = Vendor.create({name: "German Select", contact: "wolfgang 235-643-7321", w
 
 
 
-#########NOT SEEDING#############
 bmw_part1 = Part.create({part_number: "45-8970-445", part_name: "MANN Oil Filter", cost: 12, part_designation: "Engine", quantity: 1, vendor_id: 1})
 bmw_part2 = Part.create({part_number: "45-273-492", part_name: "Brembo Brake Pads", cost: 80, part_designation: "Brakes", quantity: 4, vendor_id: 1})
 vw_part1 = Part.create({part_number: "221-408-119A", part_name: "Brembo Drum Brake Cylinder", cost: 27, part_designation: "Brakes", quantity: 2, vendor_id: 2})
@@ -108,14 +106,14 @@ volvo_part2 = Part.create({part_number: "vv70-700-3386", part_name: "Transmissio
 # volvo_vsp1 = VehicleServicePart.create({vehicle_id: volvo, service_id: volvo_service1, part_id: volvo_part1})
 # volvo_vsp2 = VehicleServicePart.create({vehicle_id: volvo, service_id: volvo_service2, part_id: volvo_part2})
 
-bmw_vsp1 = VehicleServicePart.create({vehicle_id: 1, service_id: 1, part_id: 1})
-bmw_vsp2 = VehicleServicePart.create({vehicle_id: 1, service_id: 2, part_id: 2})
-vw_vsp1 = VehicleServicePart.create({vehicle_id: 2, service_id: 3, part_id: 3})
-vw_vsp2 = VehicleServicePart.create({vehicle_id: 2, service_id: 4, part_id: 4})
-audi_vsp1 = VehicleServicePart.create({vehicle_id: 3, service_id: 5, part_id: 5})
-audi_vsp2 = VehicleServicePart.create({vehicle_id: 3, service_id: 6, part_id: 6})
-volvo_vsp1 = VehicleServicePart.create({vehicle_id: 4, service_id: 7, part_id: 7})
-volvo_vsp2 = VehicleServicePart.create({vehicle_id: 4, service_id: 8, part_id: 8})
+bmw_vsp1 = VehicleServicePart.create({vehicle: bmw, service: bmw_service1, part: bmw_part1})
+bmw_vsp2 = VehicleServicePart.create({vehicle: bmw, service: bmw_service2, part: bmw_part2})
+vw_vsp1 = VehicleServicePart.create({vehicle: vw, service: vw_service1, part: vw_part1})
+vw_vsp2 = VehicleServicePart.create({vehicle: vw, service: vw_service2, part: vw_part2})
+audi_vsp1 = VehicleServicePart.create({vehicle: audi, service: audi_service1, part: audi_part1})
+audi_vsp2 = VehicleServicePart.create({vehicle: audi, service: audi_service2, part: audi_part2})
+volvo_vsp1 = VehicleServicePart.create({vehicle: volvo, service: volvo_service1, part: volvo_part1})
+volvo_vsp2 = VehicleServicePart.create({vehicle: volvo, service: volvo_service2, part: volvo_part2})
 # create_table "vehicle_service_parts", force: :cascade do |t|
 #   t.integer "vehicle_id"
 #   t.integer "service_id"

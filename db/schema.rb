@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_214241) do
+ActiveRecord::Schema.define(version: 2019_01_21_042407) do
 
   create_table "owners", force: :cascade do |t|
     t.string "name"
@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 2019_01_21_214241) do
     t.integer "cost"
     t.string "part_designation"
     t.integer "quantity"
+    t.integer "vendor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "vendor_id"
+    t.index ["vendor_id"], name: "index_parts_on_vendor_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -50,6 +51,9 @@ ActiveRecord::Schema.define(version: 2019_01_21_214241) do
     t.integer "part_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["part_id"], name: "index_vehicle_service_parts_on_part_id"
+    t.index ["service_id"], name: "index_vehicle_service_parts_on_service_id"
+    t.index ["vehicle_id"], name: "index_vehicle_service_parts_on_vehicle_id"
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -60,9 +64,10 @@ ActiveRecord::Schema.define(version: 2019_01_21_214241) do
     t.string "engine"
     t.string "car_classification"
     t.string "color"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "owner_id"
+    t.index ["owner_id"], name: "index_vehicles_on_owner_id"
   end
 
   create_table "vendors", force: :cascade do |t|

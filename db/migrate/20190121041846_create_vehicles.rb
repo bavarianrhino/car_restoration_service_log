@@ -8,7 +8,7 @@ class CreateVehicles < ActiveRecord::Migration[5.2]
       t.string :engine
       t.string :car_classification
       t.string :color
-
+      t.belongs_to :owner, foreign_key: true
       t.timestamps
     end
   end

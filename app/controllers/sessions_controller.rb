@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     @owner = Owner.find_by(username: params[:username])
-    if @owner && @owner.authenitcate(params[:password])
+    if @owner && @owner.authenticate(params[:password])
       session[:owner_id] = @owner.id
       redirect_to vehicles_path
     else

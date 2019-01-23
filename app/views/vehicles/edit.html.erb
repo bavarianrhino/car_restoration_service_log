@@ -1,14 +1,14 @@
 <h1>Vehicles Edit Page</h1>
 
+<%= form_for @vehicle do |f| %>
+    <p> Make: <%= f.text_field :make %></p>
+    <p> Model: <%= f.text_field :model %></p>
+    <p> Year: <%= f.text_field :year %></p>
+    <p> Vin: <%= f.text_field :vin %></p>
+    <p> Engine: <%= f.text_field :engine %></p>
+    <p> Vehicle Type: <%= f.text_field :car_classification %></p>
+    <p> Color: <%= f.text_field :color %></p>
+    <%= f.submit "Edit Vehicle" %>
+<% end %>
 
-<!-- create_table "vehicles", force: :cascade do |t|
-  t.string "make"
-  t.string "model"
-  t.integer "year"
-  t.string "vin"
-  t.string "engine"
-  t.string "car_classification"
-  t.string "color"
-  t.datetime "created_at", null: false
-  t.datetime "updated_at", null: false
-end -->
+<%= link_to('Back to Vehicles', vehicles_path(@vehicles)) %>

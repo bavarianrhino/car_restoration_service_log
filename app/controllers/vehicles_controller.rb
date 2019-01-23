@@ -1,7 +1,7 @@
 class VehiclesController < ApplicationController
 
     def index
-        @vehicles = Vehicle.all
+        @vehicles = Vehicle.where(owner_id: current_user.id)
     end
 
 

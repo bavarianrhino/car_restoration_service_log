@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
     resources :vendors
-    resources :vehicle_service_parts
-    resources :parts
+    # resources :vehicle_service_parts
+    resources :parts, except: [:new, :edit]
     resources :services
     resources :vehicles
-    resources :owners
+    resources :owners, except: [:index]
+
 
     get '/login', to: 'sessions#new', as: 'login'
     post '/login', to: 'sessions#create'

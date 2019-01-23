@@ -13,10 +13,13 @@ class ServicesController < ApplicationController
 
     def new
         @service = Service.new
+        @vendors = Vendor.all
+        @part = Part.new
     end
 
 
     def create
+      #byebug
         @service = Service.create(service_params)
         if @service.save
             redirect_to @service
@@ -42,7 +45,8 @@ class ServicesController < ApplicationController
 
     private
     def service_params
-        params.require(:service).permit(:date, :work_description, :car_miles, :work_hours) #FILL .PERMIT PARAMS
+        params.require(:service).permit(:date, :work_description, :car_miles, :work_hours,
+        parts_attributes: [:part_number, :part_name, :cost, :part_description, :quantity, :vendor_id]) #FILL .PERMIT PARAMS
     end
 
 end

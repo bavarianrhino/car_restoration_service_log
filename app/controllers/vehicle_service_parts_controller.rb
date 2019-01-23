@@ -1,4 +1,5 @@
 class VehicleServicePartsController < ApplicationController
+  before_action :authorize!
 
     def index
         @vehicleserviceparts = VehicleServicePart.all

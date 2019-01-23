@@ -1,4 +1,5 @@
 class VehiclesController < ApplicationController
+  before_action :authorize!
 
     def index
         @vehicles = Vehicle.where(owner_id: current_user.id)

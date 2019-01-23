@@ -1,13 +1,10 @@
 class OwnersController < ApplicationController
+  before_action :authorize!, :except => [:new, :create]
 
   # call authorize! wherever
-    def index
-        @owners = Owner.all
-    end
-
 
     def show
-        @owner = Owner.find(params[:id])
+        @owner = Owner.find(current_user.id)
     end
 
 
@@ -30,12 +27,12 @@ class OwnersController < ApplicationController
 
 
     def edit
-        @owner = Owner.find(params[:id])
+        @owner = Owner.find(current_user.id)
     end
 
 
     def update
-        @owner = Owner.find(params[:id])
+        @owner = Owner.find(current_user.id)
         @owner.update(owner_params)
         redirect_to owner_path(@owner)
     end

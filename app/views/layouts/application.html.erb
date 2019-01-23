@@ -12,6 +12,7 @@
 
   <% if session[:owner_id] %>
     <%= link_to("Logout", logout_path, method: :delete) %>
+    <%= link_to("Profile", owner_path(current_user.id)) %>
   <% else %>
     <%= link_to("Login", login_path) %>
   <% end %>

@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :authorize!
 
     def index
         @services = Service.all

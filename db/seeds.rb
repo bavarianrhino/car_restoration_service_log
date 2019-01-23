@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Owner.destroy_all
-# Vehicle.destroy_all
-# Service.destroy_all
-# Part.destroy_all
-# VehicleServicePart.destroy_all
-# Vendor.destroy_all
+Owner.destroy_all
+Vehicle.destroy_all
+Service.destroy_all
+Part.destroy_all
+VehicleServicePart.destroy_all
+Vendor.destroy_all
 
-ryan = Owner.find_or_create_by({name: "Ryan Riesenberger", street: "105 Northampton", city: "Canton", state: "GA", zip: 30115, phone_number: "619-508-0510", email: "rjriesenberger@gmail.com", username: "bavarianrhino"})
-sunny = Owner.find_or_create_by({name: "Sunny Sharma", street: "9421 Peachtree Dr.", city: "Duluth", state: "GA", zip: 30110, phone_number: "678-390-0000", email: "ssharma@gmail.com", username: "sunny"})
+ryan = Owner.find_or_create_by({name: "Ryan Riesenberger", street: "105 Northampton", city: "Canton", state: "GA", zip: 30115, phone_number: "619-508-0510", email: "rjriesenberger@gmail.com", username: "bavarianrhino", password_digest: "1234"})
+sunny = Owner.find_or_create_by({name: "Sunny Sharma", street: "9421 Peachtree Dr.", city: "Duluth", state: "GA", zip: 30110, phone_number: "678-390-0000", email: "ssharma@gmail.com", username: "sunny", password_digest: "1234"})
 # create_table "owners", force: :cascade do |t|
 #   t.string "name"
 #   t.string "street"

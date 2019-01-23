@@ -1,4 +1,5 @@
 class VendorsController < ApplicationController
+  before_action :authorize!
 
     def index
         @vendors = Vendor.all

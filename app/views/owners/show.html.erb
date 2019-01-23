@@ -13,7 +13,7 @@
         <!-- <th colspan="2"> Super Power</th> -->
     </tr>
     <tr>
-        <td><%= link_to @owner.name, owner_path(@owner) %></td>
+        <td><%= @owner.name %></td>
         <td><%= @owner.street %></td>
         <td><%= @owner.city %></td>
         <td><%= @owner.state %></td>
@@ -25,7 +25,7 @@
 </table>
 <br />
 
-<%= link_to 'Show All Owners', owners_path(@owners) %>
+<%= link_to("Edit Profile", edit_owner_path(current_user.id)) %>
 
 <!-- create_table "owners", force: :cascade do |t|
   t.string "name"

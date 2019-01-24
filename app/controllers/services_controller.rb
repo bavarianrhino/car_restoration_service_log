@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
 
 
     def create
-      #byebug
+      byebug
         @service = Service.create(service_params)
         if @service.save
             redirect_to @service

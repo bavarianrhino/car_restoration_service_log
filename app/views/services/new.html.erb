@@ -25,13 +25,17 @@
   <%= part_form.number_field :cost %>
   <br />
   <%= part_form.label "Description:" %>
-  <%= part_form.text_field :part_description %>
+  <%= part_form.text_field :part_designation %>
   <br />
   <%= part_form.label "Quantity:" %>
   <%= part_form.number_field :quantity %>
   <br />
   <%= part_form.label "Vendor:" %>
   <%= part_form.collection_select(:vendor_id, @vendors, :id, :name) %>
+  <% end %>
+
+  <%= f.fields_for(:vehicle) do |v| %>
+  <%= v.collection_select(:vehicle_id, @vehicles, :id, :model) %>
   <% end %>
 <%= f.submit "Create Service" %>
 <% end %>

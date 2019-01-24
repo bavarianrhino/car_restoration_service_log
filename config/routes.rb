@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
     resources :vendors
     # resources :vehicle_service_parts
-    resources :parts, except: [:new, :edit]
+    resources :parts
     resources :services
     resources :vehicles
     resources :owners, except: [:index]

@@ -8,6 +8,10 @@ class VehiclesController < ApplicationController
 
     def show
         @vehicle = Vehicle.find(params[:id])
+        @services = Service.where(vehicle: @vehicle)
+        @total_hours_of_service = @vehicle.total_hours_of_service
+        @total_cost = @vehicle.total_parts_cost
+        #byebug
     end
 
 

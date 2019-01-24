@@ -13,6 +13,7 @@ class PartsController < ApplicationController
 
     def new
         @part = Part.new
+        @vendors = Vendor.all
     end
 
 

@@ -13,64 +13,53 @@
 <%= f.label "Work hours:" %>
 <%= f.number_field :work_hours %>
 <br />
-
-  <%= f.fields_for(:parts) do |part_form| %>
-  <%= part_form.label "Part Number:" %>
-  <%= part_form.text_field :part_number %>
-  <br />
-  <%= part_form.label "Part Name:" %>
-  <%= part_form.text_field :part_name %>
-  <br />
-  <%= part_form.label "Cost:" %>
-  <%= part_form.number_field :cost %>
-  <br />
-  <%= part_form.label "Description:" %>
-  <%= part_form.text_field :part_designation %>
-  <br />
-  <%= part_form.label "Quantity:" %>
-  <%= part_form.number_field :quantity %>
-  <br />
-  <%= part_form.label "Vendor:" %>
-  <%= part_form.collection_select(:vendor_id, @vendors, :id, :name) %>
-  <% end %>
-
-  <%= f.fields_for(:vehicle) do |v| %>
-  <%= v.collection_select(:vehicle_id, @vehicles, :id, :model) %>
-  <% end %>
-<%= f.submit "Create Service" %>
+<%= f.collection_select(:vehicle_id, @vehicles, :id, :model) %>
+<%= f.collection_select(:part_id, @parts, :id, :part_name) %>
+<%= f.submit "Submit Service" %>
 <% end %>
-
 <!--
-< form_for(@person) do |f| %>
-< f.label :name %>
-< f.text_field :name %>
-< f.label :age %>
-< f.number_field :age %>
-< f.label :location %>
-< f.text_field :location %>
 
-<p>Skip the bullshit. Tell me about your dog already.</p>
-< f.fields_for(:pets) do |pet_form| %>
-< pet_form.label :name %>
-< pet_form.text_field :name %>
-< pet_form.label :image %>
-< pet_form.text_field :image %>
-< pet_form.label :likes %>
-< pet_form.number_field :likes %>
- end
-< f.submit %>
- end
- -->
+< form_for(@service) do |f| %>
+< f.label "Date:" %>
+< f.text_field :date %>
+<br />
+< f.label "Work Description:" %>
+< f.text_field :work_description %>
+<br />
+< f.label "Miles at time of service:" %>
+< f.number_field :car_miles %>
+<br />
+< f.label "Work hours:" %>
+< f.number_field :work_hours %>
+<br />
+
+  < f.fields_for(:parts) do |part_form| %>
+  < part_form.label "Part Number:" %>
+  < part_form.text_field :part_number %>
+  <br />
+  < part_form.label "Part Name:" %>
+  < part_form.text_field :part_name %>
+  <br />
+  < part_form.label "Cost:" %>
+  < part_form.number_field :cost %>
+  <br />
+  < part_form.label "Description:" %>
+  < part_form.text_field :part_designation %>
+  <br />
+  < part_form.label "Quantity:" %>
+  < part_form.number_field :quantity %>
+  <br />
+  < part_form.label "Vendor:" %>
+  < part_form.collection_select(:vendor_id, @vendors, :id, :name) %>
+  < end %>
+
+  < f.fields_for(:vehicle) do |v| %>
+  < v.collection_select(:vehicle_id, @vehicles, :id, :model) %>
+  < end %>
+< f.submit "Create Service" %>
+< end %>
+-->
+
+
 
 <%= link_to 'Back to Services', services_path(@services) %>
-
-
-
-<!-- create_table "services", force: :cascade do |t|
-  t.string "date"
-  t.string "work_description"
-  t.integer "car_miles"
-  t.integer "work_hours"
-  t.datetime "created_at", null: false
-  t.datetime "updated_at", null: false
-end -->

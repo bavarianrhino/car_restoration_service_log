@@ -1,5 +1,12 @@
 <h1>Vendors New Page</h1>
 
+<%= form_for @vendor do |f| %>
+    <p> Name: <%= f.text_field :name %></p>
+    <p> Contact: <%= f.text_field :contact %></p>
+    <p> Website: <%= f.text_field :website %></p>
+    <p> Location:: <%= f.text_field :location %></p>
+    <%= f.submit "Submit" %>
+<% end %>
 
 <%= link_to 'Back to Vendors', vendors_path(@vendors) %>
 

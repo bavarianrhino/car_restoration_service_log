@@ -1,6 +1,7 @@
 class Service < ApplicationRecord
-    has_many :vehicles
-    has_many :parts
-    accepts_nested_attributes_for :parts
-    accepts_nested_attributes_for :vehicles
+    belongs_to :vehicle
+    #has_many :parts
+    belongs_to :part
+    #accepts_nested_attributes_for :parts
+    #accepts_nested_attributes_for :vehicles
 end

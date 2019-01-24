@@ -23,6 +23,16 @@
 </table>
 <br />
 
+<%= @services.each do |s| %>
+  <%= s.date %>
+  <%= s.work_description %>
+  <%= s.car_miles %>
+  <%= s.work_hours %>
+<% end %>
+
+Total cost of services on this vehicle: <%= @total_hours_of_service %>
+Total cost of parts serviced on this vehicle: <%= @total_cost %>
+
 <%= link_to("New Service", new_service_path) %>
 <%= link_to("Edit vehicle", edit_vehicle_path(@vehicle)) %>
 <%= link_to 'Show All Vehicles', vehicles_path(@vehicles) %>

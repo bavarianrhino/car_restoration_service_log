@@ -11,6 +11,11 @@ class VehiclesController < ApplicationController
         @services = Service.where(vehicle: @vehicle)
         @total_hours_of_service = @vehicle.total_hours_of_service
         @total_cost = @vehicle.total_parts_cost
+        @part_list = @vehicle.list_parts_serviced
+        @vendors = @vehicle.list_of_vendors
+        # get rid of this vvv when @cost_of_part_designations is working and use that instead
+        #@part_designations = @vehicle.part_designations
+        @cost_of_part_designations = @vehicle.cost_of_part_designations
         #byebug
     end
 

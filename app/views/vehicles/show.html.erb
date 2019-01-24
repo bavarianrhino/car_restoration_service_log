@@ -23,15 +23,26 @@
 </table>
 <br />
 
-<%= @services.each do |s| %>
-  <%= s.date %>
+<% @services.each do |s| %>
+  <p><%= s.date %>
   <%= s.work_description %>
   <%= s.car_miles %>
-  <%= s.work_hours %>
+  <%= s.work_hours %></p>
 <% end %>
 
 Total cost of services on this vehicle: <%= @total_hours_of_service %>
 Total cost of parts serviced on this vehicle: <%= @total_cost %>
+
+<% @part_list.each do |p| %>
+<p><%= p.part_name %></p>
+<% end %>
+
+<% @vendors.each do |v| %>
+<p><%= link_to(v.name, vendor_path(v)) %></p>
+<% end %>
+
+<h1>testing stuff</h1>
+<%= @cost_of_part_designations %>
 
 <%= link_to("New Service", new_service_path) %>
 <%= link_to("Edit vehicle", edit_vehicle_path(@vehicle)) %>

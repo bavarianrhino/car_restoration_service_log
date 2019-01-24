@@ -14,7 +14,6 @@ class ServicesController < ApplicationController
     def new
         @service = Service.new
         @vendors = Vendor.all
-        @part = @service.parts.build
         @vehicles = Vehicle.where(owner: current_user.id)
     end
 

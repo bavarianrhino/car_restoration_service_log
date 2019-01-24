@@ -3,6 +3,7 @@
 <% @services.each do |service| %>
     <li><%= link_to service.date, service_path(service) %></li>
     <li><%= service.work_description%></li>
+    <li><%= service.vehicles %></li>
     <br />
 <% end %>
 

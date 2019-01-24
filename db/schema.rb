@@ -43,19 +43,10 @@ ActiveRecord::Schema.define(version: 2019_01_22_204254) do
     t.string "work_description"
     t.integer "car_miles"
     t.integer "work_hours"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vehicle_service_parts", force: :cascade do |t|
-    t.integer "vehicle_id"
-    t.integer "service_id"
     t.integer "part_id"
+    t.integer "vehicle_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["part_id"], name: "index_vehicle_service_parts_on_part_id"
-    t.index ["service_id"], name: "index_vehicle_service_parts_on_service_id"
-    t.index ["vehicle_id"], name: "index_vehicle_service_parts_on_vehicle_id"
   end
 
   create_table "vehicles", force: :cascade do |t|

@@ -13,13 +13,14 @@ class Vehicle < ApplicationRecord
     end
 
     def total_parts_cost
-      total_cost = 0
-      services = Service.where(vehicle: self)
-      services.each do |s|
-        part_cost = s.part.cost
-        total_cost += part_cost
-      end
-      total_cost
+      # total_cost = 0
+      # services = Service.where(vehicle: self)
+      # services.each do |s|
+      #   part_cost = s.part.cost
+      #   total_cost += (part_cost * s.part.quantity)
+      # end
+      # total_cost
+      cost_of_part_designations.values.inject(:+)
     end
 
     #list parts serviced

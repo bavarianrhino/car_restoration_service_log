@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    if current_user.id.present?
+    if session[:owner_id].present?
       redirect_to(owner_path(current_user.id))
     end
   end

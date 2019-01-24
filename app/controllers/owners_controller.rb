@@ -5,6 +5,9 @@ class OwnersController < ApplicationController
 
     def show
         @owner = Owner.find(current_user.id)
+        @vehicles = @owner.get_vehicles
+        @total_hours = @owner.total_hours_of_service
+        @total_cost = @owner.total_parts_cost
     end
 
 

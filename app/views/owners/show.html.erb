@@ -25,6 +25,13 @@
 </table>
 <br />
 
+<% @vehicles.each do |v|%>
+<p><%= v.make %> <%= v.model %></p>
+<% end %>
+
+Total hours of service on vehicles: <%= @total_hours %>
+Total cost of all parts: <%= @total_cost %>
+
 <%= link_to("Edit Profile", edit_owner_path(current_user.id)) %>
 
 <!-- create_table "owners", force: :cascade do |t|

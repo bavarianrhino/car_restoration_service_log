@@ -46,6 +46,7 @@
 
 <article id="contact">
     <div class="formContainer">
+        <h4> Hours & Cost Totals</h4>
 Total hours of services on this vehicle: <%= @total_hours_of_service %>
 <br />
 Total cost of parts serviced on this vehicle: $<%= @total_cost %>.00
@@ -55,10 +56,13 @@ Total cost of parts serviced on this vehicle: $<%= @total_cost %>.00
     <article id="contact">
         <div class="formContainer">
             <h4> Serviced Parts & Vendors </h4>
+            <br />
                 <% @part_list.each_with_index do |p, i| %>
                     <p><%= p.part_name %> : <%= link_to @vendors[i].name, vendor_path(@vendors[i]) %></p>
                 <% end %>
+                <br />
             <h4> Vehicle Service Price Breakdown </h4>
+            <br />
             <% @cost_of_part_designations.each do |k, v| %>
                 Total Cost of <%= k %> parts: $<%= v.to_f %>0<br />
             <% end %>

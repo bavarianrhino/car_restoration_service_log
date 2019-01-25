@@ -1,11 +1,17 @@
-<h1>Vendors Index Page</h1>
-
+<article id="contact">
+    <div class="formContainer">
+<h1>Vendors</h1>
+<br />
 <% @vendors.each do |vendor| %>
     <li><%= link_to vendor.name, vendor_path(vendor) %></li>
     <br />
 <% end %>
-
+<br />
+<br />
+<h3>Add a New Vendor</h3>
 <%= link_to 'Add a Vendor', new_vendor_path() %>
+</div>
+</article>
 
 <!-- create_table "vendors", force: :cascade do |t|
   t.string "name"

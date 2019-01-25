@@ -1,3 +1,5 @@
+<article id="contact">
+    <div class="formContainer">
 <h1>Vehicles Show Page</h1>
 
 
@@ -22,6 +24,11 @@
     </tr>
 </table>
 <br />
+</div>
+</article>
+
+<article id="contact">
+    <div class="formContainer">
 
 <% @services.each do |s| %>
   <p><%= s.date %>
@@ -29,10 +36,15 @@
   <%= s.car_miles %>
   <%= s.work_hours %></p>
 <% end %>
-
+</div>
+</article>
+<article id="contact">
+    <div class="formContainer">
 Total hours of services on this vehicle: <%= @total_hours_of_service %>
+<br />
 Total cost of parts serviced on this vehicle: <%= @total_cost %>
-
+</div>
+</article>
 <% @part_list.each do |p| %>
 <p><%= p.part_name %></p>
 <% end %>

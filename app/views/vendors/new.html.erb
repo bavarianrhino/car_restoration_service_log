@@ -1,14 +1,20 @@
-<h1>Vendors New Page</h1>
+<article id="contact">
+    <div class="formContainer">
+<h1>Create A New Vendor</h1>
 
 <%= form_for @vendor do |f| %>
-    <p> Name: <%= f.text_field :name %></p>
-    <p> Contact: <%= f.text_field :contact %></p>
-    <p> Website: <%= f.text_field :website %></p>
-    <p> Location:: <%= f.text_field :location %></p>
-    <%= f.submit "Submit" %>
+    <p> Name: <%= f.text_field :name, class: "textfields" %></p>
+    <p> Contact: <%= f.text_field :contact, class: "textfields" %></p>
+    <p> Website: <%= f.text_field :website, class: "textfields" %></p>
+    <p> Location: <%= f.text_field :location, class: "textfields" %></p>
+    <ul class="actions">
+        <%= f.submit "Create Vendor", class: "inputs" %>
+    </ul>
 <% end %>
 
 <%= link_to 'Back to Vendors', vendors_path(@vendors) %>
+</div>
+</article>
 
 <!-- create_table "vendors", force: :cascade do |t|
   t.string "name"

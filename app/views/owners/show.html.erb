@@ -1,5 +1,6 @@
-<h1> Owners Show Page </h1>
-
+<h1> Your Profile </h1>
+<article id="contact">
+    <div class="formContainer">
 <table>
     <tr>
         <th>Name</th>
@@ -25,14 +26,20 @@
 </table>
 <br />
 
+<p class="vehicle">Your Vehicles</p>
 <% @vehicles.each do |v|%>
 <p><%= v.make %> <%= v.model %></p>
 <% end %>
 
 Total hours of service on vehicles: <%= @total_hours %>
-Total cost of all parts: <%= @total_cost %>
-
+<br />
+Total cost of all parts: $<%= @total_cost %>.00
+<br />
+<br />
 <%= link_to("Edit Profile", edit_owner_path(current_user.id)) %>
+</div>
+</article>
+
 
 <!-- create_table "owners", force: :cascade do |t|
   t.string "name"

@@ -1,11 +1,18 @@
+<article id="contact">
+    <div class="formContainer">
 <% if @error %>
   <p><%= @error %></p>
 <% end %>
 
   <%= form_tag(login_path) do %>
-    Username: <%= text_field_tag("username") %>
-    Password: <%= password_field_tag("password") %>
-    <%= submit_tag("Login") %>
+    Username: <%= text_field_tag("username", value = nil, options = {class: "textfields"}) %>
+    Password: <%= password_field_tag("password", value = nil, options = {class: "textfields"}) %>
+    <br />
+    <ul class="actions">
+    <%= submit_tag("Login", options = {class: "inputs"}) %>
+    </ul>
   <% end %>
-
+  <br />
 <%= link_to("Sign Up!", signup_path) %>
+</div>
+</article>

@@ -1,11 +1,17 @@
+<article id="contact">
+    <div class="formContainer">
 <h1>Edit Part</h1>
 
 <%= form_for @part do |f| %>
-    <p> Part Number: <%= f.text_field :part_number %></p>
-    <p> Part Name: <%= f.text_field :part_name %></p>
-    <p> Cost: <%= f.text_field :cost %></p>
-    <p> Part Designation: <%= f.text_field :part_designation %></p>
-    <p> Quantity: <%= f.number_field :quantity %></p>
+    <p> Part Number: <%= f.text_field :part_number, class: "textfields" %></p>
+    <p> Part Name: <%= f.text_field :part_name, class: "textfields" %></p>
+    <p> Cost: <%= f.text_field :cost, class: "textfields" %></p>
+    <p> Part Designation: <%= f.text_field :part_designation, class: "textfields" %></p>
+    <p> Quantity: <%= f.number_field :quantity, class: "textfields" %></p>
     <p> Vendor: <%= f.collection_select(:vendor_id, @vendors, :id, :name) %> </p>
-    <%= f.submit "Submit" %>
+    <ul class="actions">
+        <%= f.submit "Submit", class: "inputs" %>
+    </ul>
 <% end %>
+</div>
+</article>

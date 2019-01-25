@@ -1,14 +1,21 @@
-<h1>Vehicles Edit Page</h1>
+<article id="contact">
+    <div class="formContainer">
+<h1>Edit Your Vehicle </h1>
 
 <%= form_for @vehicle do |f| %>
-    <p> Make: <%= f.text_field :make %></p>
-    <p> Model: <%= f.text_field :model %></p>
-    <p> Year: <%= f.text_field :year %></p>
-    <p> Vin: <%= f.text_field :vin %></p>
-    <p> Engine: <%= f.text_field :engine %></p>
-    <p> Vehicle Type: <%= f.text_field :car_classification %></p>
-    <p> Color: <%= f.text_field :color %></p>
-    <%= f.submit "Edit Vehicle" %>
+    <p> Make: <%= f.text_field :make, class: "textfields" %></p>
+    <p> Model: <%= f.text_field :model, class: "textfields" %></p>
+    <p> Year: <%= f.text_field :year, class: "textfields" %></p>
+    <p> Vin: <%= f.text_field :vin, class: "textfields" %></p>
+    <p> Engine: <%= f.text_field :engine, class: "textfields" %></p>
+    <p> Vehicle Type: <%= f.text_field :car_classification, class: "textfields" %></p>
+    <p> Color: <%= f.text_field :color, class: "textfields" %></p>
+    <ul class="actions">
+        <%= f.submit "Submit", class: "inputs" %>
+    </ul>
 <% end %>
-
+<br />
+<br />
 <%= link_to('Back to Vehicles', vehicles_path(@vehicles)) %>
+</div>
+</article>

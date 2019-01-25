@@ -1,19 +1,25 @@
+<article id="contact">
+    <div class="formContainer">
 <h1>Vehicles New Page</h1>
 
 <%= form_for @vehicle do |f| %>
-    <p> Make: <%= f.text_field :make %></p>
-    <p> Model: <%= f.text_field :model %></p>
-    <p> Year: <%= f.text_field :year %></p>
-    <p> Vin: <%= f.text_field :vin %></p>
-    <p> Engine: <%= f.text_field :engine %></p>
-    <p> Vehicle Type: <%= f.text_field :car_classification %></p>
-    <p> Color: <%= f.text_field :color %></p>
+    <p> Make: <%= f.text_field :make, class: "textfields" %></p>
+    <p> Model: <%= f.text_field :model, class: "textfields" %></p>
+    <p> Year: <%= f.text_field :year, class: "textfields" %></p>
+    <p> Vin: <%= f.text_field :vin, class: "textfields" %></p>
+    <p> Engine: <%= f.text_field :engine, class: "textfields" %></p>
+    <p> Vehicle Type: <%= f.text_field :car_classification, class: "textfields" %></p>
+    <p> Color: <%= f.text_field :color, class: "textfields" %></p>
     <p> <%= f.hidden_field :owner_id, :value => current_user.id %> </p>
-    <%= f.submit "Create Vehicle" %>
+    <ul class="actions">
+        <%= f.submit "Create Vehicle", class: "inputs" %>
+    </ul>
 <% end %>
 
 <%= link_to('Back to Vehicles', vehicles_path) %>
 
+</div>
+</article>
 
 
 

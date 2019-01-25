@@ -1,17 +1,24 @@
-<h1> Owners Edit Page </h1>
+<article id="contact">
+    <div class="formContainer">
 
-<%= form_for :owner, url: '/owners' do |f| %>
-    <p> Name: <%= f.text_field :name %></p>
-    <p> Street: <%= f.text_field :street %></p>
-    <p> City: <%= f.text_field :city %></p>
-    <p> State: <%= f.text_field :state %></p>
-    <p> Zip: <%= f.text_field :zip %></p>
-    <p> Phone Number: <%= f.text_field :phone_number %></p>
-    <p> Email: <%= f.text_field :email %></p>
-    <p> Username: <%= f.text_field :username %></p>
-    <%= f.submit "Submit" %>
-<% end %>
+    <h1> Edit Your Profile </h1>
 
+    <%= form_for :owner, url: '/owners' do |f| %>
+    <p> Name: <br /><%= f.text_field :name, class: "textfields" %></p>
+    <p> Street: <br /><%= f.text_field :street, class: "textfields" %></p>
+    <p> City: <br /><%= f.text_field :city, class: "textfields" %></p>
+    <p> State: <br /><%= f.text_field :state, class: "textfields" %></p>
+    <p> Zip: <br /><%= f.text_field :zip, class: "textfields" %></p>
+    <p> Phone Number: <br /><%= f.text_field :phone_number, class: "textfields" %></p>
+    <p> Email: <br /><%= f.text_field :email, class: "textfields" %></p>
+    <p> Username: <br /><%= f.text_field :username, class: "textfields" %></p>
+    <ul class="actions">
+        <%= f.submit "Submit", class: "inputs" %>
+    </ul>
+    <% end %>
+
+    </div>
+</article>
 <!-- create_table "owners", force: :cascade do |t|
   t.string "name"
   t.string "street"

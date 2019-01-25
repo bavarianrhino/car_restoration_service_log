@@ -1,11 +1,17 @@
-<h1>Vehicles Index Page</h1>
-
+<article id="contact">
+    <div class="formContainer">
+<h1> Your Vehicles </h1>
+<br />
+<br />
 <% @vehicles.each do |vehicle| %>
-    <li><%= link_to vehicle.model, vehicle_path(vehicle) %></li>
+    <h3><%= link_to vehicle.make, vehicle_path(vehicle)%> - <%= link_to vehicle.model, vehicle_path(vehicle) %></h3>
     <br />
 <% end %>
 
+
 <%= link_to("Add a vehicle", new_vehicle_path) %>
+</div>
+</article>
 
 
 

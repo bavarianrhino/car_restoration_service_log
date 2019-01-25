@@ -1,65 +1,33 @@
-<h1> Services New Page </h1>
+<article id="contact">
+    <div class="formContainer">
+    <h1> Add New Service </h1>
 
-<%= form_for(@service) do |f| %>
-<%= f.label "Date:" %>
-<%= f.text_field :date %>
-<br />
-<%= f.label "Work Description:" %>
-<%= f.text_field :work_description %>
-<br />
-<%= f.label "Miles at time of service:" %>
-<%= f.number_field :car_miles %>
-<br />
-<%= f.label "Work hours:" %>
-<%= f.number_field :work_hours %>
-<br />
-<%= f.collection_select(:vehicle_id, @vehicles, :id, :model) %>
-<%= f.collection_select(:part_id, @parts, :id, :part_name) %>
-<%= f.submit "Submit Service" %>
-<% end %>
-<!--
+    <%= form_for(@service) do |f| %>
+    <%= f.label "Date:" %>
+    <%= f.text_field :date, class: "textfields" %>
+    <br />
+    <%= f.label "Work Description:" %>
+    <%= f.text_field :work_description, class: "textfields" %>
+    <br />
+    <%= f.label "Miles at time of service:" %>
+    <%= f.number_field :car_miles, class: "textfields" %>
+    <br />
+    <%= f.label "Work hours:" %>
+    <%= f.number_field :work_hours, class: "textfields" %>
+    <br />
+    <br />
+    <%= f.label "Choose Vehicle:" %>
+    <%= f.collection_select(:vehicle_id, @vehicles, :id, :model) %>
+    <br />
+    <br />
+    <%= f.label "Chose Part:" %>
+    <%= f.collection_select(:part_id, @parts, :id, :part_name) %>
+    <p><%= f.label "(If part is not shown, please add part)" %><%= link_to("New Part", new_part_path) %></p>
+    <ul class="actions">
+        <%= f.submit "Submit", class: "inputs" %>
+    </ul>
+    <% end %>
 
-< form_for(@service) do |f| %>
-< f.label "Date:" %>
-< f.text_field :date %>
-<br />
-< f.label "Work Description:" %>
-< f.text_field :work_description %>
-<br />
-< f.label "Miles at time of service:" %>
-< f.number_field :car_miles %>
-<br />
-< f.label "Work hours:" %>
-< f.number_field :work_hours %>
-<br />
-
-  < f.fields_for(:parts) do |part_form| %>
-  < part_form.label "Part Number:" %>
-  < part_form.text_field :part_number %>
-  <br />
-  < part_form.label "Part Name:" %>
-  < part_form.text_field :part_name %>
-  <br />
-  < part_form.label "Cost:" %>
-  < part_form.number_field :cost %>
-  <br />
-  < part_form.label "Description:" %>
-  < part_form.text_field :part_designation %>
-  <br />
-  < part_form.label "Quantity:" %>
-  < part_form.number_field :quantity %>
-  <br />
-  < part_form.label "Vendor:" %>
-  < part_form.collection_select(:vendor_id, @vendors, :id, :name) %>
-  < end %>
-
-  < f.fields_for(:vehicle) do |v| %>
-  < v.collection_select(:vehicle_id, @vehicles, :id, :model) %>
-  < end %>
-< f.submit "Create Service" %>
-< end %>
--->
-
-
-
-<%= link_to 'Back to Services', services_path(@services) %>
+    <%= link_to 'Back to Services', services_path(@services) %>
+    </div>
+</article>

@@ -1,13 +1,20 @@
-<h1> Services Index Page </h1>
+<article id="contact">
+    <div class="formContainer">
+<h1> Your Vehicles Services </h1>
 <%= link_to("Add new service", new_service_path) %>
 <br />
+<br />
+<br />
 
-<% @services.each do |service| %>
+    <% @services.each do |service| %>
+    <li><%= service.vehicle.make %> - <%= service.vehicle.model %></li>
     <li><%= link_to service.date, service_path(service) %></li>
     <li><%= service.work_description%></li>
-    <li><%= service.vehicle %></li>
+    <br />
     <br />
 <% end %>
+</div>
+</article>
 
 
 <!-- create_table "services", force: :cascade do |t|

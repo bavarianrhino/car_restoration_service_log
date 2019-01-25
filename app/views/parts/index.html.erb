@@ -1,5 +1,10 @@
-<h1> Parts Index Page </h1>
-
+<article id="contact">
+    <div class="formContainer">
+        <h3> Add New Part </h1>
+            <%= link_to("New Part", new_part_path) %>
+            <br />
+            <br />
+        <h3> Entered Parts </h1>
 
 <% @parts.each do |part| %>
     <li><%= link_to part.part_name, part_path(part) %></li>
@@ -7,9 +12,8 @@
     <li><%= part.part_designation%></li>
     <br />
 <% end %>
-
-<%= link_to("New Part", new_part_path) %>
-
+</div>
+</article>
 
 
 

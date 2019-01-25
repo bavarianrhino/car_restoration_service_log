@@ -14,3 +14,22 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+
+
+	$('#dLabel1').on('click', function () {
+		$('.drop1').slideToggle(250)
+		$('.drop2').hide()
+		$('.dropdown1').on('mouseleave', function () {
+			$('.drop1').hide()
+		})
+	})
+
+
+	console.warn("This works");
+    	console.log("This log");
+
+
+});

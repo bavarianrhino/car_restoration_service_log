@@ -10,21 +10,64 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <% if session[:owner_id] %>
-    <%= link_to("Logout", logout_path, method: :delete) %>
-    <%= link_to("Profile", owner_path(current_user.id)) %>
-  <% else %>
-    <%= link_to("Login", login_path) %>
-  <% end %>
-
-  <!-- flash notice -->
-
-  <%= link_to("Vehicles", vehicles_path) %>
-  <%= link_to("Parts", parts_path) %>
-  <%= link_to("Vendors", vendors_path) %>
-  <%= link_to("Services", services_path) %>
-
   <body>
-    <%= yield %>
+      <div class="site-wrapper">
+          <div class="site-wrapper-inner">
+              <div class="cover-container">
+
+                  <!-- Navigation Bar -->
+                  <div class="masthead clearfix">
+                      <div class="inner">
+                          <nav>
+                              <ul class="nav masthead-nav mastheadCover">
+                                  <li><%= link_to("Vehicles", vehicles_path) %></li>
+                                  <li><%= link_to("Parts", parts_path) %></li>
+                                  <li><%= link_to("Vendors", vendors_path) %></li>
+                                  <li><%= link_to("Services", services_path) %></li>
+                                  <!-- <li class="nav-item dropdown"> -->
+                                      <!-- <a class="nav-link dropdown-toggle" href="#" id="dLabel1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+                                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> -->
+                                          <% if session[:owner_id] %>
+                                          <li><%= link_to("Profile", owner_path(current_user.id)) %></li>
+                                          <!-- <a class="dropdown-item">< link_to("Profile", owner_path(current_user.id)) %></a> -->
+                                          <li><%= link_to("Logout", logout_path, method: :delete) %></li>
+                                          <!-- <a class="dropdown-item">< link_to("Logout", logout_path, method: :delete) %></a> -->
+                                          <% else %>
+                                          <li><%= link_to("Login", login_path) %></li>
+                                          <!-- <a class="dropdown-item">< link_to("Login", login_path) %></a> -->
+                                          <% end %>
+                                      <!-- </div> -->
+                                  <!-- </li> -->
+                              </ul>
+                          </nav>
+                      </div>
+                  </div>
+
+                  <!-- flash notice -->
+
+                  <%= yield %>
+
+              </div>
+          </div>
+      </div>
+      <!-- <script src=".../assets/javascripts/application.js"></script> -->
   </body>
+
+
+
 </html>
+
+
+
+
+
+
+
+<!--
+< if session[:owner_id] %>
+<link_to("Logout", logout_path, method: :delete) %>
+<link_to("Profile", owner_path(current_user.id)) %>
+<else %>
+< link_to("Login", login_path) %>
+< end %>
+-->
